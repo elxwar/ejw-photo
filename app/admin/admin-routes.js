@@ -11,7 +11,10 @@
         url: '/admin',
         templateUrl: 'admin/admin.tpl.html',
         controller: 'AdminCtrl',
-        controllerAs: 'admin'
+        controllerAs: 'admin',
+        data: {
+          pageTitle: 'Photo Site Admin'
+        }
       });
   }
 }());
