@@ -12,7 +12,7 @@ describe('Home page', function () {
   });
 
   it('should say HomeCtrl', function () {
-    expect(homePage.heading.getText()).toEqual('home');
-    expect(homePage.text.getText()).toEqual('HomeCtrl');
+    expect(homePage.heading.getText()).toBe('home');
+    expect(homePage.text.getText()).toBe('HomeCtrl');
   });
 });
