@@ -44,7 +44,7 @@ describe('Admin page', function() {
   it('should be able to add a new article', function() {
     adminPage.articleTab.click();
     adminPage.addArticle.click();
-    expect(browser.getCurrentUrl()).toContain('#/create_article');
+    expect(browser.getCurrentUrl()).toContain('#/create-article');
   });
 
 //  it('should be able to edit an article', function() {

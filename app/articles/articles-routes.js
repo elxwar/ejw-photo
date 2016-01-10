@@ -11,7 +11,13 @@
         url: '/articles',
         templateUrl: 'articles/articles.tpl.html',
         controller: 'ArticlesCtrl',
-        controllerAs: 'articles'
+        controllerAs: 'articlesVm'
+      })
+      .state('createArticle', {
+        url: '/create-article',
+        templateUrl: 'articles/create-article.tpl.html',
+        controller: 'CreateArticleCtrl',
+        controllerAs: 'createArticleVm'
       });
   }
 }());

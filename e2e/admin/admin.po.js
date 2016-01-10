@@ -8,7 +8,7 @@ function AdminPage() {
   this.addGallery = element(by.buttonText('Add new Gallery'));
   this.editGallery = element(by.buttonText('Edit'));
   this.articleTab = element(by.linkText('Articles'));
-  this.addArticle = element(by.buttonText('Add new Gallery'));
+  this.addArticle = element(by.buttonText('Add new Article'));
   this.editArticle = element(by.buttonText('Edit'));
 }
 

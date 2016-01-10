@@ -11,6 +11,6 @@ describe('AdminCtrl', function () {
   }));
 
   it('should have ctrlName as AdminCtrl', function () {
-    expect(ctrl.ctrlName).toEqual('AdminCtrl');
+    expect(ctrl.tabs[0].title).toEqual('Galleries');
   });
 });
