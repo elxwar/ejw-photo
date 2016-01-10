@@ -10,7 +10,11 @@ describe('ArticlesCtrl', function () {
     ctrl = $controller('ArticlesCtrl');
   }));
 
-  it('should have ctrlName as ArticlesCtrl', function () {
-    expect(ctrl.ctrlName).toEqual('ArticlesCtrl');
+  it('should have title "Articles"', function () {
+    expect(ctrl.title).toEqual('Articles');
   });
+
+  // it('should have ctrlName as ArticlesCtrl', function () {
+  //   expect(ctrl.ctrlName).toEqual('ArticlesCtrl');
+  // });
 });

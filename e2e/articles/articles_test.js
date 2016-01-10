@@ -12,7 +12,6 @@ describe('Articles page', function () {
   });
 
   it('should say ArticlesCtrl', function () {
-    expect(articlesPage.heading.getText()).toEqual('articles');
-    expect(articlesPage.text.getText()).toEqual('ArticlesCtrl');
+    expect(articlesPage.heading.getText()).toEqual('Articles');
   });
 });
