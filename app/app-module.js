@@ -14,6 +14,7 @@
       'ngPageTitle',
       'home',
       'articles',
-      'admin'
+      'admin',
+      'galleries'
     ]);
 }());

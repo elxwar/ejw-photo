@@ -31,10 +31,10 @@ describe('Admin page', function() {
     expect(adminPage.tabs.get(2).getAttribute('title')).toBe('Articles');
   });
 
-//  it('should be able to add a new gallery', function() {
-//    adminPage.addGallery.click();
-//    expect(browser.getCurrentUrl()).toContain('#/create_gallery');
-//  });
+  it('should be able to add a new gallery', function() {
+    adminPage.addGallery.click();
+    expect(browser.getCurrentUrl()).toContain('#/create-gallery');
+  });
 
 //  it('should be able to edit a gallery', function() {
 //    adminPage.editGallery.click();
