@@ -11,6 +11,7 @@
       'ui.router',
       'mgcrea.ngStrap',
       'home',
-      'articles'
+      'articles',
+      'admin'
     ]);
 }());
