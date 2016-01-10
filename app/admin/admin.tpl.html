@@ -1,11 +1,11 @@
-<h2>Site Admin</h2>
+<h1>Site Admin</h1>
 <div bs-tabs>
   <div ng-repeat="tab in adminVm.tabs" title="{{ tab.title }}" name="{{ tab.title }}"  bs-pane>
     <div ng-if="tab.title === 'Galleries'">
       <div ng-include="'galleries/galleries.tpl.html'" ng-controller="GalleriesCtrl as galleriesVm"></div>
     </div>
     <div ng-if="tab.title === 'Pages'">
-      PAger
+      <div ng-include="'pages/pages.tpl.html'" ng-controller="PagesCtrl as pagesVm"></div>
     </div>
     <div ng-if="tab.title === 'Articles'">
       <div ng-include="'articles/articles.tpl.html'" ng-controller="ArticlesCtrl as articlesVm"></div>

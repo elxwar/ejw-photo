@@ -15,6 +15,7 @@
       'home',
       'articles',
       'admin',
-      'galleries'
+      'galleries',
+      'pages'
     ]);
 }());

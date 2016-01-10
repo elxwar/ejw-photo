@@ -51,4 +51,8 @@ describe('Admin page', function() {
 //    adminPage.editGallery.click();
 //    expect(browser.getCurrentUrl()).toContain('#/edit_gallery');
 //  });
+
+  it('should be able to see a list of pages', function() {
+    adminPage.pageTab.click();
+  });
 });
