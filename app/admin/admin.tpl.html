@@ -1,2 +1,17 @@
-<h2>admin</h2>
-<p>{{admin.ctrlName}}</p>
+<h2>Site Admin</h2>
+<div bs-tabs>
+  <div ng-repeat="tab in adminVm.tabs" title="{{ tab.title }}" name="{{ tab.title }}"  bs-pane>
+    <div ng-if="tab.title === 'Galleries'">
+      Galleries will be here
+      <div ng-include="'articles/articles.tpl.html'" ng-controller="ArticlesCtrl as articles"></div>
+    </div>
+    <div ng-if="tab.title === 'Pages'">
+      PAger
+    </div>
+    <div ng-if="tab.title === 'Articles'">
+      <div ng-include="'articles/articles.tpl.html'" ng-controller="ArticlesCtrl as articles"></div>
+    </div>
+  </div>
+</div>
+
+

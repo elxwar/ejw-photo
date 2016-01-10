@@ -1,0 +1,16 @@
+@import '../styles/lesshat.less';
+.tab-pane.am-fade {
+  .lh-animation-duration(400);
+  //animation-duration: .4s;
+  .lh-animation-timing-function(ease);
+  .lh-animation-fill-mode(backwards);
+  .lh-opacity(1);
+
+  &.active-remove {
+    display: none !important;
+  }
+  &.active-add {
+    animation-name: fadeIn;
+  }
+
+}

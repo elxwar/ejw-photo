@@ -14,6 +14,16 @@
 
   function AdminCtrl() {
     var vm = this;
-    vm.ctrlName = 'AdminCtrl';
+    vm.tabs = [
+      {
+        title: 'Galleries'
+      },
+      {
+        title: 'Pages'
+      },
+      {
+        title: 'Articles'
+      }
+    ];
   }
 }());

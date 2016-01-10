@@ -10,6 +10,7 @@
     .module('mwCom', [
       'ui.router',
       'mgcrea.ngStrap',
+      'ngAnimate',
       'ngPageTitle',
       'home',
       'articles',

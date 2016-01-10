@@ -11,7 +11,7 @@
         url: '/admin',
         templateUrl: 'admin/admin.tpl.html',
         controller: 'AdminCtrl',
-        controllerAs: 'admin',
+        controllerAs: 'adminVm',
         data: {
           pageTitle: 'Photo Site Admin'
         }
