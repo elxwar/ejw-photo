@@ -12,6 +12,7 @@
       'mgcrea.ngStrap',
       'ngAnimate',
       'ngPageTitle',
+      'restangular',
       'home',
       'articles',
       'admin',

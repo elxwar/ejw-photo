@@ -2,7 +2,7 @@
 
 *Generated with [ng-poly](https://github.com/dustinspecker/generator-ng-poly/tree/v0.11.4) version 0.11.4*
 
-*Beginnings* of a photo portfolio site which allows signed in user to add and edit articles, galleries and photos.
+*Beginnings* of a photo portfolio site in AngularJS which allows signed in user to add and edit articles, galleries and photos.
 
 **Makes use of the rails API in [portfolio_api](https://github.com/elxwar/portfolio_api)**
 

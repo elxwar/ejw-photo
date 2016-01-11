@@ -17,7 +17,10 @@
         url: '/create-gallery',
         templateUrl: 'galleries/create-gallery.tpl.html',
         controller: 'CreateGalleryCtrl',
-        controllerAs: 'createGalleryVm'
+        controllerAs: 'createGalleryVm',
+        data: {
+          pageTitle: 'Create Gallery'
+        }
       });
   }
 }());

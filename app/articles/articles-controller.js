@@ -15,8 +15,6 @@
   function ArticlesCtrl() {
     var vm = this;
     vm.title = 'Articles';
-
     vm.articles = ['a', 'b'];
-    console.log(vm);
   }
 }());
