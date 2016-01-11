@@ -11,8 +11,11 @@ describe('Create gallery page', function () {
     browser.get('/#/create-gallery');
   });
 
-  it('should say CreateGalleryCtrl', function () {
-    expect(createGalleryPage.heading.getText()).toEqual('createGallery');
-    expect(createGalleryPage.text.getText()).toEqual('CreateGalleryCtrlVm');
+  it('should have a page title', function() {
+    expect(browser.getTitle()).toBe('Create Gallery');
+  });
+
+  it('should have heading Create New Gallery', function() {
+    expect(adminPage.heading.getText()).toBe('Create New Gallery');
   });
 });
