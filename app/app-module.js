@@ -19,6 +19,7 @@
         'articles',
         'admin',
         'galleries',
-        'pages'
+        'pages',
+        'toaster'
       ]);
 }());

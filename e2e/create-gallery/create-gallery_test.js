@@ -26,6 +26,6 @@ describe('Create gallery page', function() {
     createGalleryPage.createGallery.click();
     expect(browser.getCurrentUrl()).toContain('#/admin');
     expect(createGalleryPage.alert.isPresent());
-    expect(createGalleryPage.alert.getText()).toBe('You have successfully created a new gallery');
+    expect(createGalleryPage.alert.getText()).toBe('Gallery Created');
   });
 });

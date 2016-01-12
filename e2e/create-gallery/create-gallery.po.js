@@ -9,7 +9,7 @@ function CreateGalleryPage() {
   this.galleryThumbnail = element(by.model('createGalleryVm.gallery.thumbnail'));
   this.galleryPhotos = element(by.model('createGalleryVm.gallery.photos'));
   this.createGallery = element(by.buttonText('Create Gallery'));
-  this.alert = element(by.css('.alert'));
+  this.alert = element(by.css('.toast-title'));
 }
 
 module.exports = CreateGalleryPage;
