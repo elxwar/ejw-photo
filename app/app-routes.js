@@ -2,8 +2,8 @@
   'use strict';
 
   angular
-    .module('mwCom')
-    .config(config);
+      .module('mwCom')
+      .config(config);
 
   function config($urlRouterProvider, envServiceProvider) {
     $urlRouterProvider.otherwise('/home');
@@ -26,7 +26,6 @@
         }
       }
     });
-
     // run the environment check, so the configuration is made
     // before controllers and services are built
     envServiceProvider.check();
