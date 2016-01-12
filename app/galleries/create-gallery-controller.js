@@ -12,9 +12,10 @@
     .module('galleries')
     .controller('CreateGalleryCtrl', CreateGalleryCtrl);
 
-  function CreateGalleryCtrl(GalleriesService) {
+  function CreateGalleryCtrl($state, GalleriesService) {
     var vm = this;
-    vm.ctrlName = 'CreateGalleryCtrlVm';
+    vm.gallery = {};
+
     GalleriesService.getAll().then (function (result) {
       console.log('\n\n*************************** ejw - result ***************************:\n result : - ', angular.toJson(result, true) + '\n\n');
     }, function(error) {
@@ -22,9 +23,8 @@
     });
 
     vm.createGallery = function() {
-      GalleriesService.addGallery();
+      GalleriesService.addGallery(vm.gallery);
+      $state.go('admin');
     };
-
-//    vm.addGallery();
   }
 }());

@@ -31,8 +31,6 @@
     };
 
     self.addGallery = function(gallery) {
-      gallery = gallery || {name: 'Test Gallery paw', description: 'Lorem ipsum la di da...', thumbnail: 'http://animage.somewhere/it.jpg'};
-
       return self.withAuthToken().all('galleries').post({
         gallery: gallery
       });

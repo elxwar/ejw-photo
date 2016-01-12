@@ -1,4 +1,4 @@
-(function () {
+(function() {
   'use strict';
 
   /* @ngdoc object
@@ -7,17 +7,18 @@
    *
    */
   angular
-    .module('mwCom', [
-      'ui.router',
-      'mgcrea.ngStrap',
-      'ngAnimate',
-      'ngPageTitle',
-      'restangular',
-      'environment',
-      'home',
-      'articles',
-      'admin',
-      'galleries',
-      'pages'
-    ]);
+      .module('mwCom', [
+        'ui.router',
+        'mgcrea.ngStrap',
+        'ngAnimate',
+        'ngPageTitle',
+        'restangular',
+        'environment',
+        'angular-ladda',
+        'home',
+        'articles',
+        'admin',
+        'galleries',
+        'pages'
+      ]);
 }());
