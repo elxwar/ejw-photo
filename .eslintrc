@@ -6,6 +6,9 @@
   "rules": {
     "angular/ng_controller_name": [2, "/[A-Z].*Ctrl$/"],
     "consistent-this": 0,
-    "space-before-function-paren": 0
+    "space-before-function-paren": 0,
+    "no-spaced-func": 0,
+    "angular/ng_module_getter": 0,
+    "angular/ng_di": 0
   }
 }

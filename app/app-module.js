@@ -13,6 +13,7 @@
       'ngAnimate',
       'ngPageTitle',
       'restangular',
+      'environment',
       'home',
       'articles',
       'admin',
