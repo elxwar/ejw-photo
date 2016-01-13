@@ -15,6 +15,7 @@
         'restangular',
         'environment',
         'angular-ladda',
+        'infinite-scroll',
         'home',
         'articles',
         'admin',

@@ -12,16 +12,15 @@
       .module('galleries')
       .controller('GalleriesCtrl', GalleriesCtrl);
 
-  function GalleriesCtrl($alert, $rootScope, GalleriesService) {
+  function GalleriesCtrl(GalleriesService) {
     var vm = this;
-    vm.ctrlName = 'GalleriesCtrlVm';
-    vm.galleries = {};
+    vm.ctrlName = 'GalleriesCtrl';
+    vm.title = 'Galleries';
+//    All galleries related methods are defined in galleries-service.js
+    vm.gsrv = GalleriesService;
 
-    GalleriesService.getAll().then(function(result) {
-      console.log('\n\n*************************** ejw - result ***************************:\n result : - ', angular.toJson(result, true) + '\n\n');
-      vm.galleries = result.galleries;
-    }, function(error) {
-      console.log('\n\n*************************** ejw - error ***************************:\n error : - ', angular.toJson(error, true) + '\n\n');
-    });
+    vm.sort = function(order) {
+      vm.gsrv.sort(order);
+    };
   }
 }());

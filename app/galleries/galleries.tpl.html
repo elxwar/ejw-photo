@@ -1,6 +1,54 @@
-<h2>galleries</h2>
+<h2>{{galleriesVm.title}}</h2>
 <button class="btn btn-primary pull-right">
   <a ui-sref="createGallery">Add new Gallery</a>
 </button>
+<div class="col-md-12">
+  <table class="table table-bordered"
+         infinite-scroll="galleriesVm.loadMore()"
+         infinite-scroll-immediate-check="false"
+         infinite-scroll-distance="1">
 
-<pre>{{galleriesVm.galleries | json}}</pre>
+    <tr>
+      <th class="col-1">
+        <div class="sortables">
+          <span ng-click="galleriesVm.gsrv.sort('name')" class="fa fa-sort-asc"></span>
+          <span ng-click="galleriesVm.gsrv.sort('-name')" class="fa fa-sort-desc"></span>
+        </div>
+        Name
+      </th>
+      <th class="col-2">Description</th>
+      <th class="col-3">Thumbnail</th>
+      <th class="col-4">Action</th>
+    </tr>
+
+    <tr ng-repeat="gallery in galleriesVm.gsrv.galleries"
+        ng-style="{
+							 'background-color': gallery.name == galleriesVm.galleries.selectedGallery.name ? 'lightgray' : ''
+						}"
+        ui-sref="edit({name: gallery.name})">
+      <td>{{ gallery.name }}</td>
+      <td>{{ gallery.description }}</td>
+      <td>
+        {{gallery.thumbnail}}
+        <!--<img ng-src="{{gallery.thumbnail | defaultImage:'./avatar.png'}}"-->
+             <!--class="img-circle profile-photo"-->
+             <!--alt=""/>-->
+      </td>
+      <td></td>
+    </tr>
+  </table>
+
+  <div ng-show="contacts.persons.length == 0 && !contacts.isLoading">
+    <div class="alert alert-info">
+      <p class="text-center">No results found for search term '{{ search }}'</p>
+    </div>
+  </div>
+
+  <div class="spinner"
+       ng-show="contacts.isLoading">
+    <span us-spinner="{radius:8, width:5, length: 3, lines:9}"></span>
+
+    <p>Loading...</p>
+  </div>
+
+</div>
