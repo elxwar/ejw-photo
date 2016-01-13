@@ -1,8 +1,8 @@
 <div class="col-md-12 gallery-head">
-    <h2>{{galleriesVm.title}}</h2>
-    <button class="btn btn-primary pull-right top-right-button">
-      <a ui-sref="createGallery">Add new Gallery</a>
-    </button>
+  <h2>{{galleriesVm.title}}</h2>
+  <button class="btn btn-primary pull-right top-right-button">
+    <a ui-sref="createGallery">Add new Gallery</a>
+  </button>
 </div>
 <div class="col-md-12">
   <table class="table table-bordered"
@@ -22,22 +22,23 @@
       <th class="col-3">Thumbnail</th>
       <th class="col-4">Action</th>
     </tr>
-
     <tr ng-repeat="gallery in galleriesVm.gsrv.galleries"
-        ui-sref="edit({name: gallery.name})">
-      <div ng-style="{
-							 'background-color': gallery.name == galleriesVm.gsrv.selectedGallery.name ? 'lightgray' : ''
-						}"
-           ui-sref="edit({email: person.email})">
-        <td>{{ gallery.name }}</td>
-        <td>{{ gallery.description }}</td>
-        <td>
-          <img ng-src="{{gallery.thumbnail | defaultGalleryThumbnail:'images/default-gallery-thumbnail.png'}}"
-               class="img-circle profile-photo"
-               alt=""/>
-        </td>
-      </div>
-      <td></td>
+        ng-style="{
+           'background-color': gallery.id == galleriesVm.gsrv.selectedGallery.id ? 'gray' : ''
+        }">
+
+      <td ng-click="galleriesVm.editGallery(gallery)">{{ gallery.name }}</td>
+      <td ng-click="galleriesVm.editGallery(gallery)">{{ gallery.description }}</td>
+      <td ng-click="galleriesVm.editGallery(gallery)">
+        <img ng-src="{{gallery.thumbnail | defaultGalleryThumbnail:'images/default-gallery-thumbnail.png'}}"
+             class="img-circle profile-photo"
+             alt=""/>
+      </td>
+      <td>
+        <button class="btn btn-sm btn-danger" ng-click="galleriesVm.deleteGallery(gallery)" style="z-index: 1000">
+          Delete
+        </button>
+      </td>
     </tr>
   </table>
 

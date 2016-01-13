@@ -21,6 +21,12 @@
         data: {
           pageTitle: 'Create Gallery'
         }
+      })
+      .state('editGallery', {
+        url: '/edit-gallery/:name',
+        templateUrl: 'galleries/edit-gallery.tpl.html',
+        controller: 'EditGalleryCtrl',
+        controllerAs: 'editGallery'
       });
   }
 }());
