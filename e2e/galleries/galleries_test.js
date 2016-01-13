@@ -12,6 +12,6 @@ describe('Galleries page', function () {
   });
 
   it('should say GalleriesCtrl', function () {
-    expect(galleriesPage.heading.getText()).toEqual('galleries');
+    expect(galleriesPage.heading.getText()).toEqual('Galleries');
   });
 });

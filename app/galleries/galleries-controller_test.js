@@ -11,7 +11,6 @@ describe('GalleriesCtrl', function () {
 
   beforeEach(inject(function ($rootScope, $controller) {
     ctrl = $controller('GalleriesCtrl');
-    console.log('\n\n*************************** ejw - ctrl ***************************:\n ctrl : - ', angular.toJson(ctrl, true) + '\n\n');
   }));
 
   it('should have ctrlName as GalleriesCtrl', function () {

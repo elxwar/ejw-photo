@@ -1,7 +1,9 @@
-<h2>{{galleriesVm.title}}</h2>
-<button class="btn btn-primary pull-right">
-  <a ui-sref="createGallery">Add new Gallery</a>
-</button>
+<div class="col-md-12 gallery-head">
+    <h2>{{galleriesVm.title}}</h2>
+    <button class="btn btn-primary pull-right top-right-button">
+      <a ui-sref="createGallery">Add new Gallery</a>
+    </button>
+</div>
 <div class="col-md-12">
   <table class="table table-bordered"
          infinite-scroll="galleriesVm.loadMore()"
@@ -22,18 +24,19 @@
     </tr>
 
     <tr ng-repeat="gallery in galleriesVm.gsrv.galleries"
-        ng-style="{
-							 'background-color': gallery.name == galleriesVm.galleries.selectedGallery.name ? 'lightgray' : ''
-						}"
         ui-sref="edit({name: gallery.name})">
-      <td>{{ gallery.name }}</td>
-      <td>{{ gallery.description }}</td>
-      <td>
-        {{gallery.thumbnail}}
-        <!--<img ng-src="{{gallery.thumbnail | defaultImage:'./avatar.png'}}"-->
-             <!--class="img-circle profile-photo"-->
-             <!--alt=""/>-->
-      </td>
+      <div ng-style="{
+							 'background-color': gallery.name == galleriesVm.gsrv.selectedGallery.name ? 'lightgray' : ''
+						}"
+           ui-sref="edit({email: person.email})">
+        <td>{{ gallery.name }}</td>
+        <td>{{ gallery.description }}</td>
+        <td>
+          <img ng-src="{{gallery.thumbnail | defaultGalleryThumbnail:'images/default-gallery-thumbnail.png'}}"
+               class="img-circle profile-photo"
+               alt=""/>
+        </td>
+      </div>
       <td></td>
     </tr>
   </table>
