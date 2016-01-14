@@ -36,6 +36,11 @@ describe('Admin page', function() {
     expect(browser.getCurrentUrl()).toContain('#/create-gallery');
   });
 
+//  it('should be able to delete a gallery', function() {
+//    adminPage.deleteGallery.click();
+//    expect(browser.getCurrentUrl()).toContain('#/create-gallery');
+//  });
+
 //  it('should be able to edit a gallery', function() {
 //    adminPage.editGallery.click();
 //    expect(browser.getCurrentUrl()).toContain('#/edit_gallery');

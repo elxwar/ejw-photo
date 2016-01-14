@@ -31,7 +31,7 @@
 
     vm.deleteGallery = function(gallery) {
       console.log('\n\n*************************** ejw - DELETE gallery ***************************:\n gallery : - ', angular.toJson(gallery, true) + '\n\n');
-      vm.gsrv.selectedGallery = gallery;
+      vm.gsrv.deleteGallery(gallery);
     };
   }
 }());

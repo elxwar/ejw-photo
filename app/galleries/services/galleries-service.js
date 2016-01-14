@@ -12,7 +12,7 @@
       .module('galleries')
       .service('GalleriesService', GalleriesService);
 
-  function GalleriesService(Restangular, envService) {
+  function GalleriesService($state, Restangular, envService, toaster) {
     var self = {
       page: 1,
       isLoading: false,
@@ -51,8 +51,22 @@
         }
       },
       addGallery: function(gallery) {
-        return self.withAuthToken().all('galleries').post({
+        self.withAuthToken().all('galleries').post({
           gallery: gallery
+        }).then(function() {
+          toaster.pop('success', 'Gallery Created', 'You have successfully created the new gallery ' + gallery.name);
+          $state.go('admin');
+        }, function(error) {
+          console.log('\n\n*************************** ejw - error ***************************:\n error : - ', angular.toJson(error, true) + '\n\n');
+          toaster.pop('error', 'Gallery Not Created', 'You have failed to created the new gallery ' + gallery.name);
+        });
+      },
+      deleteGallery: function(gallery) {
+        var endpoint = 'galleries/' + gallery.id;
+        self.withAuthToken().one(endpoint).remove().then(function(result) {
+          console.log('\n\n*************************** ejw - result ***************************:\n result : - ', angular.toJson(result, true) + '\n\n');
+          self.selectedGallery = null;
+          toaster.pop('info', 'Gallery Delete', 'You have successfully deleted the gallery ' + gallery.name);
         });
       },
       sort: function(order) {

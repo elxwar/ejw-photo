@@ -12,14 +12,14 @@
     .module('galleries')
     .controller('CreateGalleryCtrl', CreateGalleryCtrl);
 
-  function CreateGalleryCtrl($state, GalleriesService, toaster) {
+  function CreateGalleryCtrl($state, GalleriesService) {
     var vm = this;
     vm.gallery = {};
 
     vm.createGallery = function() {
-      toaster.pop('success', 'Gallery Created', 'You have successfully created the new gallery ' + vm.gallery.name);
+//      toaster.pop('success', 'Gallery Created', 'You have successfully created the new gallery ' + vm.gallery.name);
       GalleriesService.addGallery(vm.gallery);
-      $state.go('admin');
+//      $state.go('admin');
     };
   }
 }());
