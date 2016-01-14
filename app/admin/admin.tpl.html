@@ -2,7 +2,7 @@
 <div bs-tabs>
   <div ng-repeat="tab in adminVm.tabs" title="{{ tab.title }}" name="{{ tab.title }}"  bs-pane>
     <div ng-if="tab.title === 'Galleries'">
-      <div ng-include="'galleries/galleries.tpl.html'" ng-controller="GalleriesCtrl as galleriesVm"></div>
+      <div ng-include="'galleries/list/galleries.tpl.html'" ng-controller="GalleriesCtrl as galleriesVm"></div>
     </div>
     <div ng-if="tab.title === 'Pages'">
       <div ng-include="'pages/pages.tpl.html'" ng-controller="PagesCtrl as pagesVm"></div>

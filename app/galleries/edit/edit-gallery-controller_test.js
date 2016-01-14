@@ -4,7 +4,10 @@
 describe('EditGalleryCtrl', function () {
   var ctrl;
 
-  beforeEach(module('galleries'));
+  beforeEach(function() {
+    module('mwCom');
+    module('galleries');
+  });
 
   beforeEach(inject(function ($rootScope, $controller) {
     ctrl = $controller('EditGalleryCtrl');

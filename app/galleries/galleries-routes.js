@@ -9,13 +9,13 @@
     $stateProvider
       .state('galleries', {
         url: '/galleries',
-        templateUrl: 'galleries/galleries.tpl.html',
+        templateUrl: 'galleries/list/galleries.tpl.html',
         controller: 'GalleriesCtrl',
         controllerAs: 'galleriesVm'
       })
       .state('createGallery', {
         url: '/create-gallery',
-        templateUrl: 'galleries/create-gallery.tpl.html',
+        templateUrl: 'galleries/create/create-gallery.tpl.html',
         controller: 'CreateGalleryCtrl',
         controllerAs: 'createGalleryVm',
         data: {
@@ -23,10 +23,10 @@
         }
       })
       .state('editGallery', {
-        url: '/edit-gallery/:name',
-        templateUrl: 'galleries/edit-gallery.tpl.html',
+        url: '/edit-gallery/:id',
+        templateUrl: 'galleries/edit/edit-gallery.tpl.html',
         controller: 'EditGalleryCtrl',
-        controllerAs: 'editGallery'
+        controllerAs: 'editGalleryVm'
       });
   }
 }());

@@ -12,7 +12,7 @@
       .module('galleries')
       .controller('GalleriesCtrl', GalleriesCtrl);
 
-  function GalleriesCtrl(GalleriesService) {
+  function GalleriesCtrl($state, GalleriesService) {
     var vm = this;
     vm.ctrlName = 'GalleriesCtrl';
     vm.title = 'Galleries';
@@ -26,6 +26,7 @@
     vm.editGallery = function(gallery) {
       console.log('\n\n*************************** ejw - gallery ***************************:\n gallery : - ', angular.toJson(gallery, true) + '\n\n');
       vm.gsrv.selectedGallery = gallery;
+      $state.go('editGallery', {id: gallery.id});
     };
 
     vm.deleteGallery = function(gallery) {

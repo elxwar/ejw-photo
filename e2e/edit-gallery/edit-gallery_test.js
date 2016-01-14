@@ -12,7 +12,7 @@ describe('Edit gallery page', function () {
   });
 
   it('should say EditGalleryCtrl', function () {
-    expect(editGalleryPage.heading.getText()).toEqual('editGallery');
+    expect(editGalleryPage.heading.getText()).toEqual('Edit Gallery');
     expect(editGalleryPage.text.getText()).toEqual('EditGalleryCtrl');
   });
 });
