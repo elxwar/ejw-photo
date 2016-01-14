@@ -9,6 +9,7 @@
   angular
       .module('mwCom', [
         'ui.router',
+        'ngSanitize',
         'mgcrea.ngStrap',
         'ngAnimate',
         'ngPageTitle',

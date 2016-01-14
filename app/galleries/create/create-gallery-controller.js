@@ -17,9 +17,11 @@
     vm.gallery = {};
 
     vm.createGallery = function() {
-//      toaster.pop('success', 'Gallery Created', 'You have successfully created the new gallery ' + vm.gallery.name);
       GalleriesService.addGallery(vm.gallery);
-//      $state.go('admin');
+    };
+
+    vm.cancel = function() {
+      $state.go('admin');
     };
   }
 }());

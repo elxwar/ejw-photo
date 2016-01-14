@@ -17,6 +17,7 @@
       page: 1,
       isLoading: false,
       isSaving: false,
+      isDeleting: false,
       selectedGallery: null,
       galleries: [],
       ordering: 'name',
@@ -51,22 +52,35 @@
         }
       },
       addGallery: function(gallery) {
+        self.isSaving = true;
         self.withAuthToken().all('galleries').post({
           gallery: gallery
         }).then(function() {
           toaster.pop('success', 'Gallery Created', 'You have successfully created the new gallery ' + gallery.name);
+          self.isSaving = false;
+          self.selectedGallery = null;
+          self.galleries = [];
+          self.getGalleries();
           $state.go('admin');
         }, function(error) {
           console.log('\n\n*************************** ejw - error ***************************:\n error : - ', angular.toJson(error, true) + '\n\n');
           toaster.pop('error', 'Gallery Not Created', 'You have failed to created the new gallery ' + gallery.name);
+          self.isSaving = false;
         });
       },
       deleteGallery: function(gallery) {
         var endpoint = 'galleries/' + gallery.id;
-        self.withAuthToken().one(endpoint).remove().then(function(result) {
-          console.log('\n\n*************************** ejw - result ***************************:\n result : - ', angular.toJson(result, true) + '\n\n');
+        self.isDeleting = true;
+
+        self.withAuthToken().one(endpoint).remove().then(function() {
+          var index = self.galleries.indexOf(gallery);
+          self.galleries.splice(index, 1);
           self.selectedGallery = null;
-          toaster.pop('info', 'Gallery Delete', 'You have successfully deleted the gallery ' + gallery.name);
+          self.isDeleting = false;
+          toaster.pop('info', 'Gallery Deleted', 'You have successfully deleted the gallery ' + gallery.name);
+        }, function(error) {
+          console.log('\n\n*************************** ejw - error ***************************:\n error : - ', angular.toJson(error, true) + '\n\n');
+          toaster.pop('error', 'Gallery not deleted', 'It was not possible to delete ' + gallery.name + ', please try again later.');
         });
       },
       sort: function(order) {
