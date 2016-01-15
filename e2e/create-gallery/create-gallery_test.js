@@ -19,13 +19,15 @@ describe('Create gallery page', function() {
     expect(createGalleryPage.heading.getText()).toBe('Create New Gallery');
   });
 
-  it('should add a new gallery', function() {
-    createGalleryPage.galleryName.sendKeys('Test Gallery');
-    createGalleryPage.galleryDescription.sendKeys('Test gallery description...');
+  describe('A user should be able to add a new gallery', function() {
+    it('should add a new gallery', function() {
+      createGalleryPage.galleryName.sendKeys('Test Gallery');
+      createGalleryPage.galleryDescription.sendKeys('Test gallery description...');
 //    createGalleryPage.galleryThumbnail.sendKeys('http://pretend_images.com/an_image.jpg');
-    createGalleryPage.createGallery.click();
-    expect(browser.getCurrentUrl()).toContain('#/admin');
-    expect(createGalleryPage.alert.isPresent());
-    expect(createGalleryPage.alert.getText()).toBe('Gallery Created');
+      createGalleryPage.createGallery.click();
+      expect(browser.getCurrentUrl()).toContain('#/admin');
+      expect(createGalleryPage.alert.isPresent());
+      expect(createGalleryPage.alert.getText()).toBe('Gallery Created');
+    });
   });
 });

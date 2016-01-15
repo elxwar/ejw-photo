@@ -11,8 +11,20 @@ describe('Edit gallery page', function () {
     browser.get('/#/edit-gallery/:name');
   });
 
-  it('should say EditGalleryCtrl', function () {
-    expect(editGalleryPage.heading.getText()).toEqual('Edit Gallery');
-    expect(editGalleryPage.text.getText()).toEqual('EditGalleryCtrl');
+  it('should have a page title', function() {
+    expect(browser.getTitle()).toBe('Edit Gallery');
   });
+
+  it('should have heading Edit Gallery', function() {
+    expect(editGalleryPage.heading.getText()).toBe('Edit Gallery');
+  });
+//  it('should add a new gallery', function() {
+//    createGalleryPage.galleryName.sendKeys('Test Gallery');
+//    createGalleryPage.galleryDescription.sendKeys('Test gallery description...');
+// //    createGalleryPage.galleryThumbnail.sendKeys('http://pretend_images.com/an_image.jpg');
+//    createGalleryPage.createGallery.click();
+//    expect(browser.getCurrentUrl()).toContain('#/admin');
+//    expect(createGalleryPage.alert.isPresent());
+//    expect(createGalleryPage.alert.getText()).toBe('Gallery Created');
+//  });
 });

@@ -1,6 +1,7 @@
 'use strict';
 
-var outDir = 'build/';
+var outDir = 'build/'
+    , argv = require('yargs').argv;
 
 module.exports = {
   host: 'localhost',
@@ -10,7 +11,10 @@ module.exports = {
   appDir: 'app',
 
   // unit test directories
-  unitTestDir: 'app',
+  unitTestDir: argv.unit ? 'app/' + argv.unit : 'app',
+
+  // e2e test directories
+  e2eTestDir: argv.e2e ? 'e2e/' + argv.e2e : 'e2e',
 
   // build test dir
   buildTestDir: outDir + 'test/',

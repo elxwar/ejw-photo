@@ -2,8 +2,7 @@
 'use strict';
 
 function EditGalleryPage() {
-  this.text = element(by.tagName('p'));
-  this.heading = element(by.tagName('h2'));
+  this.heading = element(by.tagName('h1'));
 }
 
 module.exports = EditGalleryPage;
