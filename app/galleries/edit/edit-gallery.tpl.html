@@ -1,2 +1,34 @@
-<h2>{{editGalleryVm.title}}</h2>
-<p>{{editGalleryVm.ctrlName}}</p>
+<div class="col-md-8 col-sm-offset-2">
+  <h1>Edit Gallery</h1>
+  <form class="form-horizontal"
+        ng-submit="editGalleryVm.createGallery()"
+        novalidate>
+    <div class="panel panel-default">
+      <div class="panel-heading">Create{{mode}} Gallery
+
+        <div class="pull-right">
+          <button class="btn btn-primary btn-sm"
+                  ladda="editGalleryVm.isSaving"
+                  type="submit">
+            Create Gallery
+            <span ng-if="mode === 'Edit'">Save</span>
+            <span ng-if="mode === 'Create'">Create</span>
+          </button>
+          <button class="btn btn-primary btn-sm" type="reset" ng-click="editGalleryVm.cancel()">
+            Cancel
+          </button>
+          <button class="btn btn-danger btn-sm"
+                  ladda="contacts.isDeleting"
+                  ng-if="mode === 'Edit'"
+                  ng-click="remove()">Delete
+          </button>
+        </div>
+
+        <div class="clearfix"></div>
+      </div>
+      <div class="panel-body">
+        <ng-include src="'galleries/forms/gallery-form.tpl.html'"></ng-include>
+      </div>
+    </div>
+  </form>
+</div>
