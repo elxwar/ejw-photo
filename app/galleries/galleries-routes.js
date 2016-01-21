@@ -26,7 +26,10 @@
         url: '/edit-gallery/:id',
         templateUrl: 'galleries/edit/edit-gallery.tpl.html',
         controller: 'EditGalleryCtrl',
-        controllerAs: 'editGalleryVm'
+        controllerAs: 'editGalleryVm',
+        data: {
+          pageTitle: 'Edit Gallery'
+        }
       });
   }
 }());

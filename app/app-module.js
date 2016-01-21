@@ -12,6 +12,7 @@
         'ngSanitize',
         'mgcrea.ngStrap',
         'ngAnimate',
+//        'ngMockE2E',
         'ngPageTitle',
         'restangular',
         'environment',

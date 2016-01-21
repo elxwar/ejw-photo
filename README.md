@@ -1,8 +1,13 @@
-# ejw-photo
+# ejw-photo-csm
+
+##NB: WIP
+This is very much a work in progress heading towards a photo portfolio CSM for photographers allowing a registered user to add, edit and delete articles, galleries and photos. 
+
+Being developed in AngularJS using the ng-poly yeoman generator and attempting to follow the good practices described in [John Papa's Angular style guide](https://github.com/johnpapa/angular-styleguide)
 
 *Generated with [ng-poly](https://github.com/dustinspecker/generator-ng-poly/tree/v0.11.4) version 0.11.4*
 
-*Beginnings* of a photo portfolio site in AngularJS which allows signed in user to add and edit articles, galleries and photos.
+
 
 **Makes use of the rails API in [portfolio_api](https://github.com/elxwar/portfolio_api)**
 

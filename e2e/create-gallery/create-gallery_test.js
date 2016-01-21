@@ -3,7 +3,7 @@
 
 var CreateGalleryPagePo = require('./create-gallery.po');
 
-describe('Create gallery page', function() {
+describe('Create gallery page:', function() {
   var createGalleryPage;
 
   beforeEach(function() {
