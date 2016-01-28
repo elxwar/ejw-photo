@@ -5,8 +5,8 @@
       .module('mwCom')
       .config(config);
 
-  function config($urlRouterProvider, envServiceProvider) {
-    $urlRouterProvider.otherwise('/home');
+  function config($urlRouterProvider, $authProvider, envServiceProvider) {
+    $urlRouterProvider.otherwise('/admin');
 
     envServiceProvider.config({
       domains: {
@@ -29,5 +29,9 @@
     // run the environment check, so the configuration is made
     // before controllers and services are built
     envServiceProvider.check();
+
+    $authProvider.configure({
+      apiUrl: 'http://localhost:3000'
+    });
   }
 }());

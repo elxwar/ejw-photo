@@ -14,6 +14,7 @@
         'ngAnimate',
 //        'ngMockE2E',
         'ngPageTitle',
+        'ng-token-auth',
         'restangular',
         'environment',
         'angular-ladda',
