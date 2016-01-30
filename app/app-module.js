@@ -24,6 +24,8 @@
         'admin',
         'galleries',
         'pages',
-        'toaster'
+        'toaster',
+        'sessions'
       ]);
 }());
+

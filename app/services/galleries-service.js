@@ -12,7 +12,7 @@
       .module('galleries')
       .service('GalleriesService', GalleriesService);
 
-  function GalleriesService($state, Restangular, envService, toaster) {
+  function GalleriesService($state, $auth, Restangular, envService, toaster) {
     var self = {
       page: 1,
       isLoading: false,
@@ -24,11 +24,9 @@
       endpoint: 'galleries',
       apiUrl: envService.read('apiUrl'),
       withAuthToken: function() {
-        //      var storage = $rootScope.$storage;
-//      var authToken = 'Token ' + storage.auth_token;
         return Restangular.withConfig(function(RestangularConfigurer) {
           RestangularConfigurer
-          //            .setDefaultHeaders({'Authorization': authToken})
+              .setDefaultHeaders($auth.retrieveData('auth_headers'))
               .setBaseUrl(self.apiUrl);
         });
       },
@@ -41,6 +39,12 @@
         if (!self.isLoading) {
           self.isLoading = true;
           self.endpoint = 'galleries';
+//          var tokens = $auth.validateUser().then(function(response) {
+//            console.log('\n\n*************************** ejw - response ***************************:\n response : - ', angular.toJson(response, true) + '\n\n');
+//          }, function(error){
+//            console.log('\n\n*************************** ejw - error ***************************:\n error : - ', angular.toJson(error, true) + '\n\n');
+//          });
+//          console.log('\n\n*************************** ejw - tokens ***************************:\n tokens : - ', angular.toJson(tokens, true) + '\n\n');
 
           self.withAuthToken().one(self.endpoint).get(params).then(function(result) {
             self.galleries = result.galleries;

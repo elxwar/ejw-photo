@@ -31,7 +31,14 @@
     envServiceProvider.check();
 
     $authProvider.configure({
-      apiUrl: 'http://localhost:3000'
+      apiUrl: 'http://localhost:3000',
+      tokenFormat: {
+        'Token-Type': 'Bearer',
+        'Access-Token': '{{token}}',
+        Uid: '{{uid}}',
+        Client: '{{clientId}}',
+        Expiry: '{{expiry}}'
+      }
     });
   }
 }());
