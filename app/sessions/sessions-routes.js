@@ -17,7 +17,10 @@
         url: '/log-in',
         templateUrl: 'sessions/new/sessions-new.tpl.html',
         controller: 'SessionsNewCtrl',
-        controllerAs: 'sessionsNewVm'
+        controllerAs: 'sessionsNewVm',
+        data: {
+          pageTitle: 'Log in'
+        }
       });
   }
 }());

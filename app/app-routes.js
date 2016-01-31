@@ -43,10 +43,11 @@
     });
   }
 
-  function run($rootScope) {
+  function run($rootScope, appConfig) {
     var stateStart = $rootScope.$on('$stateChangeStart', function(event, toState) {
       $rootScope.pageTitle = toState.data && toState.data.pageTitle ? toState.data.pageTitle : 'Photo Site';
     });
     $rootScope.$on('$destroy', stateStart);
+    $rootScope.siteTitle = appConfig.siteTitle;
   }
 }());
