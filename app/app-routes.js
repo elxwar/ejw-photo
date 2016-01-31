@@ -3,7 +3,8 @@
 
   angular
       .module('mwCom')
-      .config(config);
+      .config(config)
+      .run(run);
 
   function config($urlRouterProvider, $authProvider, envServiceProvider) {
     $urlRouterProvider.otherwise('/admin');
@@ -40,5 +41,12 @@
         Expiry: '{{expiry}}'
       }
     });
+  }
+
+  function run($rootScope) {
+    var stateStart = $rootScope.$on('$stateChangeStart', function(event, toState) {
+      $rootScope.pageTitle = toState.data && toState.data.pageTitle ? toState.data.pageTitle : 'Photo Site';
+    });
+    $rootScope.$on('$destroy', stateStart);
   }
 }());
